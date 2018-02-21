@@ -1,0 +1,101 @@
+<head>
+  <title>meteorApp</title>
+   <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css"> 
+</head>
+
+<body>
+  <h1 style="margin:30px; ">Welcome to Student List Manage Task in Meteor!</h1>
+  {{> form}}
+</body>
+ 
+
+
+ <template name = "form">
+  <div class="cointainer" style="margin:30px; "> 
+   <form id="insert-form">
+   
+   <div class='row'>
+                            <div class="form-group">
+                                <label for="default" class="col-sm-2 control-label">Name<span style="color:red;">*</span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="name" class="form-control" id="name" required="required" placeholder="Enter  Name" autocomplete="off">
+                                </div>
+                            </div>
+	</div>
+	 <div class='row'>
+                            <div class="form-group">
+                                <label for="default" class="col-sm-2 control-label">Email<span style="color:red;">*</span></label>
+                                <div class="col-sm-4">
+                                    <input type="email" name="email" class="form-control" id="email" required="required" placeholder="Enter  Email Id" autocomplete="off">
+                                </div>
+                            </div>
+   </div>
+    <div class='row'>
+                            <div class="form-group">
+                                <label for="default" class="col-sm-2 control-label">Phone<span style="color:red;">*</span></label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="phone" class="form-control" id="phone" required="required" placeholder="Enter  Phone Number" autocomplete="off">
+                                </div>
+                            </div>
+   </div>
+   
+   <div class='row'>
+                            <div class="form-group">
+                                <label for="default" class="col-sm-2 control-label">Date of Birth<span style="color:red;">*</span></label>
+                                <div class="col-sm-4">
+                             <div class="input-group datetimepicker">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+							<input class="set-due-date form-control"  type="text" name="dateOfBirth" id="dateOfBirth" required="required" placeholder="Enter Date of Birth" />
+							</div>
+								</div>
+                            </div>
+   </div>
+  
+  
+	 <div class='row'>
+    <div class='col-md-4'>
+    <input type = "submit" class="btn btn-primary" name="Insert" value ="Add Student">
+   </div>
+   </div>
+   </form>
+   </div>
+   
+   <div class ="cointainer" style="margin:30px; ">
+   <h3>All Students</h3>
+   <div class="row">
+   <div class='col-md-3'>
+   <h3><b><u>Name</u></b></h3>
+   </div>
+   
+      <div class='col-md-3'>
+   <h3><b><u>Email</u></b></h3>
+   </div>
+   <div class='col-md-3'>
+   <h3><b><u>Phone Number</u></b></h3>
+   </div>
+   <div class='col-md-3'>
+   <h3><b><u>Date of Birth</u></b></h3>
+   </div>
+   </div>
+   {{#each records}}
+   <div class="row">
+   <div class='col-md-3'>
+   {{name}}
+   </div>
+   <div class='col-md-3'>
+  {{email}}
+   </div>
+     <div class='col-md-3'>
+  {{phone}}
+   </div>
+     <div class='col-md-3'>
+  {{dateOfBirth}}
+   </div>
+   </div>
+   {{/each}}
+    
+   </div>
+  
+</template>
+
+ 

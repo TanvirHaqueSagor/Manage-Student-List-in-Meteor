@@ -1,0 +1,28 @@
+			<body>
+			<div class="container">
+			<header>
+			  <h1>Todo List</h1>
+			   
+      <form class="new-task">
+        <input type="text" name="name" placeholder="Enter Your Name" />
+		<input type="Email" name="email" placeholder="Enter Email" />
+		<input type="text" name="phoneNumber" placeholder="Enter Phone Number" />
+		<input type="text" name="dateOfBirth" placeholder="Date Of Birth" />
+		<input type="button" name="submit" value="submit" placeholder="Submit" />
+		
+      </form>
+			  
+			</header>
+			<ul>
+			  {{#each records}}
+				{{> task}}
+			  {{/each}}
+			</ul>
+			</div>
+ 
+			
+			
+			</body>
+			<template name="task">
+			<li>{{text}}</li>
+			</template>
